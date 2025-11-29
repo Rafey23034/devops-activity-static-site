@@ -123,7 +123,4 @@ docker exec jenkins kubectl version --client
 - [x] Jenkins pipeline running
 - [x] README.md complete
 
-## License
-Educational project for DevOps learning.
-
 
