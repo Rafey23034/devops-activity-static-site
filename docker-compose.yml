@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./app
+    container_name: devops-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    networks:
+      - devops-network
+
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: devops-proxy
+    ports:
+      - "8081:80"
+    volumes:
+      - ./app:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks:
+      - devops-network
+
+networks:
+  devops-network:
+    driver: bridge

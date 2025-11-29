@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-static-deployment
+  labels:
+    app: devops-static
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: devops-static
+  template:
+    metadata:
+      labels:
+        app: devops-static
+    spec:
+      containers:
+      - name: devops-static
+        image: devops-static-site:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
