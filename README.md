@@ -21,6 +21,7 @@ A complete DevOps implementation featuring:
 - Git & GitHub
 
 ## Project Structure
+```bash
 devops-activity/
 ├── Dockerfile.jenkins
 ├── Jenkinsfile
@@ -34,7 +35,7 @@ devops-activity/
 └── kubernetes
     ├── deployment.yaml
     └── service.yaml
-
+```
 ## Local Development
 
 ### Prerequisites
